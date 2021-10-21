@@ -1,0 +1,14 @@
+###1b Produce a class roster for a *specified section* sorted by student’s last name, first name. At the end, include the average grade (GPA for the class.) (10 points)
+
+SELECT DISTINCT se.Section_ID as Section,concat(s.Last_Name, ',' ,s.First_Name) as Name
+FROM student as s, grade_details as gd, section as se
+WHERE s.Student_ID=gd.Student_ID
+AND se.Section_ID=gd.Section_ID
+AND se.Section_ID=2
+UNION all
+SELECT 'AVG GPA',AVG(s.GPA)
+FROM student as s, grade_details as gd, section as se
+WHERE s.Student_ID=gd.Student_ID
+AND se.Section_ID=gd.Section_ID
+ORDER BY Name ASC;
+
