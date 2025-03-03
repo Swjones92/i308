@@ -1,2 +1,1 @@
-mysql -h db.soic.indiana.edu -p -u i308su17_swj 
-my+sql=i308u17_swj -D i308u17_swj
+
